@@ -3,7 +3,7 @@ kind: Secret
 apiVersion: v1
 metadata:
 name: privategpt-gitlab-pull-secret
-namespace: DM-AI-2025
+namespace: pedemo-yuiv-user7
 type: kubernetes.io/dockerconfigjson
 data:
 .dockerconfigjson: eyJhdXRocyI6eyJyZWdpc3RyeS5naXRsYWIuY29tIjp7InVzZXJuYW1lIjoiaW50ZWwtaW50ZXJtZWRpYXRlLWlkLWRlcGxveSIsInBhc3N3b3JkIjoiZ2xkdC1rdnNoaGpHVzc4R25Ram1YY0czMiIsImF1dGgiOiJhVzUwWld3dGFXNTBaWEp0WldScFlYUmxMV2xrTFdSbGNHeHZlVHBuYkdSMExXdDJjMmhvYWtkWE56aEhibEZxYlZoalJ6TXkifX19
@@ -13,7 +13,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
 name: privategpt-app
-namespace: DM-AI-2025
+namespace: pedemo-yuiv-user7
 spec:
 replicas: 1
 selector:
@@ -64,7 +64,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: privategpt-service
-  namespace: DM-AI-2025
+  namespace: pedemo-yuiv-user7
 spec:
   type: ClusterIP
   selector:
@@ -77,7 +77,7 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   name: privategpt
-  namespace: DM-AI-2025
+  namespace: pedemo-yuiv-user7
 spec:
   tls:
     termination: edge
